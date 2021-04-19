@@ -59,7 +59,6 @@ Review the contents of your main.tf.  At this point, it should only include your
 
 ```hcl
 #contents of your main.tf
-
 provider "aws" {
   access_key = var.access_key
   secret_key = var.secret_key
@@ -83,12 +82,11 @@ resource "aws_instance" "web" {
 
 
 ### Step 5.2.2
-
 Run `terraform plan`.  If your infrastructure is already provisioned and your code was refactored correctly, you should see no changes to your existing infrastructure with this step:
 
 ```shell
 terraform plan
-aws_instance.web: Refreshing state... [id=i-0f7d35197b76137b1]
+aws_instance.web: Refreshing state... [id=i-123456789abc]
 
 No changes. Infrastructure is up-to-date.
 
@@ -96,3 +94,4 @@ This means that Terraform did not detect any differences between your configurat
 ```
 
 ## Conclusion
+While the concepts in this lab are relatively straightforward, the concept of file modularity is a core component of Terraform.  We will be exploring this concept in much greater depth in future labs.  However, it is important to begin conceptualizing like code blocks as their own files as early in the process as possible.  As your Terraform code grows and becomes more complex (and used by other teams), segregating your code based on variables/outputs/values/etc will allow it to be more easily readable by others (and yourself as your code starts to balloon).  Terraform code itself is often a game of connect the dots, where the dots are represented by variables, outputs, resources, and modules that live in different levels of the file hierarchy.  Code segregation allows this concept to be more easily traceable.
