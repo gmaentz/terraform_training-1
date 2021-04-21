@@ -12,7 +12,7 @@ As you get more comfortable provisioning infrastructure with Terraform, we will 
 
 ### Step 5.1.1
 
-Create a new files for both outputs and variables in the same directory as your main.tf
+Create a new files for both outputs and variables in the same directory as your `main.tf`
 
 ```shell
 touch outputs.tf
