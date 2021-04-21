@@ -1,4 +1,4 @@
-# Lab 5: Refactoring Terraform Code for File Breakout
+# Lab 5: Refactoring Terraform Code Layout
 
 Duration: 15 minutes
 
