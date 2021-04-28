@@ -199,7 +199,6 @@ We'll use the private_key variable later.
 ### File structure diagram
 Modules can be a bit daunting at first.  We are suddenly working with a number of files in different file hierarchies, and those files are referencing each other in a few different ways.  This diagram is a general overview of how the files interact with each other, and how variables and outputs are defined and declared between root modules and child modules.
 
-![File Structure]{/img/fileStructure}
 <img src="img/fileStructure.png" alt="File Structure" width="700px"/>
 
 ## Task 3: Refresh and rerun your Terraform configuration
