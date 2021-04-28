@@ -1,4 +1,4 @@
-# Lab: Read State from Terraform Enterprise Workspace
+# Lab 13: Read State from Terraform Enterprise Workspace
 
 Duration: 15 minutes
 

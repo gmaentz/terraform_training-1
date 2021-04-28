@@ -1,4 +1,4 @@
-# Terraform Enterprise - Private Module Registry
+# Lab 22: Terraform Enterprise - Private Module Registry
 
 ## Expected Outcome
 

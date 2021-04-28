@@ -1,4 +1,4 @@
-# Terraform Enterprise - VCS Connection
+# Lab 19: Terraform Enterprise - VCS Connection
 
 ## Expected Outcome
 

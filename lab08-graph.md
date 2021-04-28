@@ -1,4 +1,4 @@
-# Lab 7: Terraform Graph
+# Lab 8: Terraform Graph
 
 Duration: 5 minutes
 

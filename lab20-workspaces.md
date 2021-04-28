@@ -1,4 +1,4 @@
-# Terraform Enterprise - Workspaces
+# Lab 20: Terraform Enterprise - Workspaces
 
 ## Expected Outcome
 

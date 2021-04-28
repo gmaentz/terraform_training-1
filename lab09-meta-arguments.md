@@ -1,4 +1,4 @@
-# Lab 8: Meta-Arguments
+# Lab 9: Meta-Arguments
 
 Duration: 10 minutes
 

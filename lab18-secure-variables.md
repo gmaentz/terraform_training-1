@@ -1,4 +1,4 @@
-# Lab: Migrate Variables to Terraform Enterprise
+# Lab 18: Migrate Variables to Terraform Enterprise
 
 Duration: 15 minutes
 

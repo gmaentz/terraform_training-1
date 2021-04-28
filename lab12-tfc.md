@@ -1,4 +1,4 @@
-# Lab 10: Terraform Cloud (Optional)
+# Lab 12: Terraform Cloud (Optional)
 This is an optional lab that you can perform on your own at the end of the Terraform 101 course if you have time.  It uses the [Terraform Cloud Remote Backend](https://app.terraform.io/signup?utm_source=banner&utm_campaign=intro_tf_cloud_remote).
 
 Duration: 10 minutes

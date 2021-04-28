@@ -1,4 +1,4 @@
-# Terraform Enterprise - Sentinel Development
+# Lab 24: Terraform Enterprise - Sentinel Development
 
 ## Create Folder Structure
 

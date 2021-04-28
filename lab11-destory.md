@@ -1,4 +1,4 @@
-# Lab 10: Destroy
+# Lab 11: Destroy
 
 Duration: 5 minutes
 

@@ -1,4 +1,4 @@
-# Terraform Enterprise - Sentinel Policy Use
+# Lab 23: Terraform Enterprise - Sentinel Policy Use
 
 ## Expected Outcome
 

@@ -1,4 +1,4 @@
-# Lab: Template Provider
+# Lab 16: Template Provider
 
 Duration: 20 minutes
 

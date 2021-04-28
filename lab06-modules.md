@@ -1,4 +1,4 @@
-# Lab 5: Modules
+# Lab 6: Modules
 
 Duration: 20 minutes
 

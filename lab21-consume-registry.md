@@ -1,4 +1,4 @@
-# Lab: Private Module Registry
+# Lab 21: Private Module Registry
 
 Duration: 20 minutes
 

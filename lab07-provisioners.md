@@ -1,4 +1,4 @@
-# Lab 6: Provisioners
+# Lab 7: Provisioners
 
 Duration: 10 minutes
 
