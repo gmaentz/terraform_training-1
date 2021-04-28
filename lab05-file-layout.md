@@ -1,4 +1,4 @@
-# Lab 5: Refactoring Terraform Code for File Breakout
+# Lab 5: Refactoring Terraform Code Layout
 
 Duration: 15 minutes
 
@@ -12,7 +12,7 @@ As you get more comfortable provisioning infrastructure with Terraform, we will 
 
 ### Step 5.1.1
 
-Create a new files for both outputs and variables in the same directory as your main.tf
+Create a new files for both outputs and variables in the same directory as your `main.tf`
 
 ```shell
 touch outputs.tf
@@ -21,7 +21,7 @@ touch variables.tf
 
 ### Step 5.1.2
 
-Copy the variables from the main.tf file and place them into the new variables.tf file.  Remove the variables block from your main.tf.
+Copy the variables from the `main.tf` file and place them into the new `variables.tf` file.  Remove the variables block from your `main.tf`.
 ```hcl
 #contents of the variables.tf file
 variable "access_key" {}
@@ -39,7 +39,7 @@ variable "vpc_security_group_ids" {
 
 ### Step 5.1.3
 
-Copy the outputs from the main.tf file and place them into the new outputs.tf file.  Remove the outputs block from your main.tf.
+Copy the outputs from the `main.tf` file and place them into the new `outputs.tf` file.  Remove the outputs block from your main.tf.
 
 ```hcl
 #contents of the outputs.tf file
@@ -55,7 +55,7 @@ output "public_dns" {
 ## Task 2: Successfully run a terraform plan and debug code where necessary
 
 ### Step 5.2.1
-Review the contents of your main.tf.  At this point, it should only include your provider info and your resource block(s):
+Review the contents of your `main.tf`.  At this point, it should only include your provider info and your resource block(s):
 
 ```hcl
 #contents of your main.tf
