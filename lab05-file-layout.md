@@ -4,7 +4,15 @@ Duration: 15 minutes
 
 As you get more comfortable provisioning infrastructure with Terraform, we will want to begin thinking about what this code might look like once it's in production.  Resource blocks will grow to include variables, outputs, state sourcing, and various other components that will introduce a level of complexity to our code.  This may become untenable as our Terraform files grow to include multiple modules and different types of resources.  In order to keep our code clean, it is best to begin thinking about ways that we can break out like code blocks into their own files so that we our workspace only contains the minimum amount of relevant information.  This will help keep our workspace clean while also only presenting us with relevant bits of information in their relevant sections.
 
+## Important to know
+- Terraform concatenates all of the `.tf` files together at runtime, regardless of how many are in the run directory.  
+- As we've discussed, Terraform is non-recursive.  It will only concatenate files in the run directory.
+- Terraform must be given unique indentifiers for every resource to be provisioned, e.g. you can only have one `aws_instance.web`.
+- With all of this in mind, be mindful of how you name extraneous files in your run directory.  You do not want to call backup files something along the lines of `backup.tf`, as Terraform will see this as a valid configuration file and look to include it during the concatenation phase of the `plan` or `apply`. 
+- If you wish to store backup files in your run directory, it would be more appropriate to name them `file.tf.bak` or something along those lines.  Just do not end the file in `.tf`.
 
+
+## Tasks
 - Task 1: Break out our variables and outputs into their own files and successfully run a Terraform plan.
 - Task 2. Successfully run a terraform plan and debug code where necessary
 
