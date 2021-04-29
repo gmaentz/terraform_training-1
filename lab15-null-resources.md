@@ -11,7 +11,7 @@ We'll demonstrate how `null_resource` can be used to take action on a set of exi
 
 
 ## Task 1: Create a AW Instances using Terraform
-### Step 16.1.1: Create Server instances
+### Step 15.1.1: Create Server instances
 
 Build the web servers using the AWS Server Modules (previous labs)
 
@@ -27,7 +27,7 @@ Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
 
 ## Task 2: Use `null_resource` with an EC2 instance to take action with `triggers`
-### Step 16.2.1: Use `null_resource`
+### Step 15.2.1: Use `null_resource`
 
 Add `null_resource` stanza to the `server.tf`.  Notice that the trigger for this resource is set to 
 
@@ -52,7 +52,7 @@ resource "null_resource" "web_cluster" {
 ```
 Initialize the configuration with a `terraform init` followed by a `plan` and `apply`.
 
-### Step 16.2.2: Re-run `plan` and `apply` to trigger `null_resource`
+### Step 15.2.2: Re-run `plan` and `apply` to trigger `null_resource`
 After the infrastructure has completed its buildout, re-run a plan and apply and notice if the null resource is triggered.  If you modify the `count` vaule of your `aws_instance` the null resource will be triggered.
 
 ```shell
@@ -61,7 +61,7 @@ terraform apply
 
 Run `apply` a few times to see the `null_resource`.
 
-### Step 16.2.3: Destroy
+### Step 15.2.3: Destroy
 Finally, run `destroy`.
 
 ```shell

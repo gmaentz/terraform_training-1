@@ -12,7 +12,7 @@ to and provision the instance remotely with a provisioner block.
 
 ## Task 1: Create a connection block using your keypair module outputs.
 
-### Step 6.1.1
+### Step 7.1.1
 
 In `server/server.tf`, add a connection block within your web instance resource under the tags:
 
@@ -34,7 +34,7 @@ The value of `self` refers to the resource defined by the current block. So `sel
 
 ## Task 2: Create a provisioner block to remotely download code to your instance.
 
-### Step 6.2.1
+### Step 7.2.1
 
 The file provisioner will run after the instance is created and will copy the contents of the _assets_ directory to it. Add this to the _aws_instance_ block in `server/server.tf`, right after the connection block you just added:
 
@@ -45,7 +45,7 @@ The file provisioner will run after the instance is created and will copy the co
   }
 ```
 
-### Step 6.2.2
+### Step 7.2.2
 
 The remote-exec provisioner runs remote commands. We can execute the script from
 our assets directory. Add this after the _file_ provisioner block:
@@ -62,7 +62,7 @@ Make sure both provisioners are inside the _aws_instance_ resource block.
 
 ## Task 3: Apply your configuration and watch for the remote connection.
 
-### Step 6.3.1
+### Step 7.3.1
 
 An important point to remember regarding _provisioners_ is that adding or removing them from an instance won't cause terraform to update or recreate the instance. You can see this now if you run `terraform apply`:
 

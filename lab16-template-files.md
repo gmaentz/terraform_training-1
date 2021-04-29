@@ -16,7 +16,7 @@ For this lab, we'll assume that you've installed [Terraform](https://www.terrafo
 
 You'll create an S3 bucket and then attach the necessary permissions to your user to list, get, and delete objects as well as create and destroy that bucket.
 
-### Step 1.1: Create a Terraform configuration
+### Step 16.1.1: Create a Terraform configuration
 
 Create a directory for the Terraform configuration. Create a sub-directory for templates. Create a template file.
 
@@ -30,7 +30,7 @@ touch iam_policy.json.tpl
 
 The name of the template file is completely up to you. We like to include `tpl` to identify it as a template, but also use a suffix that corresponds to the file type of the contents (such as `json`).
 
-### Step 4.1.2: Write contents of template with some placeholders for variables
+### Step 16.1.2: Write contents of template with some placeholders for variables
 
 In the file we just created, let's create a standard JSON AWS policy file that will allow objects in an S3 bucket to be modified. Our action statement defines the allowed operations and our resource statement defines where those operations can occur. We can define the resource through Terraform interpolation and define those variables outside the template and avoid hardcoding variables into our policies for added usability.
 
@@ -69,7 +69,7 @@ cd ..
 touch main.tf
 ```
 
-### Step 4.2.1: Define the `templatefile` function as a `local`
+### Step 16.2.1: Define the `templatefile` function as a `local`
 
 The local value used here will allow `templatefile` function (created and published by HashiCorp) to be referenced as a variable later.
 
@@ -86,7 +86,7 @@ locals {
 
 We also use `path.module` here for robustness in any module or submodule.
 
-### Step 4.2.2: Pass variables into the template
+### Step 16.2.2: Pass variables into the template
 
 Create a variable with the value you want to pass into the template. This value could be provided externally, fetched from a data source, or even hard-coded.
 
@@ -105,7 +105,7 @@ locals {
 }
 ```
 
-### Step 4.2.3: Render the template into an output
+### Step 16.2.3: Render the template into an output
 
 Rendered template content may be used anywhere: as arguments to a module or resource, or executed remotely as a script. In our case, we'll emit it as an output for easy viewing.
 
@@ -117,7 +117,7 @@ output "iam_policy" {
 }
 ```
 
-### Step 4.2.4: Run the code
+### Step 16.2.4: Run the code
 
 Run the code with `terraform apply` and you will see the rendered template.
 
@@ -158,7 +158,7 @@ iam_policy = {
 
 If you have extra time and want to try a more complete, real-world example, you could create an S3 bucket, use the generated `id` in a policy template, and attach the rendered template as a policy.
 
-### Step 4.3.1: Use a real IAM user as the owner
+### Step 16.3.1: Use a real IAM user as the owner
 
 Update the `owner_id` variable to use a real IAM user account name. Your
 workstation should have a hostname which includes the name of an animal. An IAM
@@ -171,7 +171,7 @@ variable "owner_id" {
 }
 ```
 
-### Step 4.3.2: Create an S3 bucket
+### Step 16.3.2: Create an S3 bucket
 
 Declare the `aws` provider and create an S3 bucket with your AWS owner ID.
 
@@ -185,7 +185,7 @@ resource "aws_s3_bucket" "bucket1" {
 }
 ```
 
-### Step 4.3.3: Render the template into a resource policy
+### Step 16.3.3: Render the template into a resource policy
 
 The policy must be created using a provider. Create the `aws_iam_policy` and the `aws_iam_policy_attachment`.
 
@@ -201,7 +201,7 @@ resource "aws_iam_user_policy_attachment" "attach-policy" {
 }
 ```
 
-### Step 4.3.4: Run the code
+### Step 16.3.4: Run the code
 
 You should see four operations upon applying this configuration: the policy template data being read, the bucket creation, the policy creation, and the action of attaching the policy to your user.
 

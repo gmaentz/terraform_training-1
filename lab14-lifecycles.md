@@ -13,7 +13,7 @@ You'll create a simple AWS configuration with a security group and an associated
 
 You'll solve this situation by using `create_before_destroy` to create the new security group before destroying the original one.
 
-### Step 6.1.1: Create a security group and an instance
+### Step 14.1.1: Create a security group and an instance
 
 Start by creating a new directory and `main.tf` to house the new configuration.
 
@@ -102,7 +102,7 @@ variable region {
 
 The commands should succeed without error.
 
-### Step 6.1.2: Change the name of the security group
+### Step 14.1.2: Change the name of the security group
 
 In order to see how some resources cannot be recreated under the default `lifecyle` settings, change the name of the security group from `demo` to something like `demo-modified`.
 
@@ -141,7 +141,7 @@ Error: Error applying plan:
 
 In the next step, we'll solve this problem with a `lifecycle` directive.
 
-### Step 6.1.3: Use `create_before_destroy`
+### Step 14.1.3: Use `create_before_destroy`
 
 Add a `lifecycle` configuration to the `aws_security_group` resource. Specify that this resource should be created before the existing security group is destroyed.
 
@@ -169,7 +169,7 @@ It should succeed within a short amount of time.
 
 We'll demonstrate how `prevent_destroy` can be used to guard an instance from being destroyed.
 
-### Step 6.2.1: Use `prevent_destroy`
+### Step 14.2.1: Use `prevent_destroy`
 
 Add `prevent_destroy = true` to the same `lifecycle` stanza where you added `create_before_destroy`.
 
@@ -204,7 +204,7 @@ continue with the plan, either disable lifecycle.prevent_destroy or reduce the
 scope of the plan using the -target flag.
 ```
 
-### Step 6.2.2: Destroy cleanly
+### Step 14.2.2: Destroy cleanly
 
 Now that you have finished the steps in this lab, destroy the infrastructure you have created.
 

@@ -14,11 +14,11 @@ A Terraform module is just a set of configuration. For this lab, we'll refactor
 your existing configuration so that the webserver configuration is inside a
 module.
 
-### Step 5.1.1
+### Step 6.1.1
 
 Create a new directory called `server` in your `/workspace/terraform` directory and create a new file inside of it called `server.tf`.
 
-### Step 5.1.2
+### Step 6.1.2
 
 Edit the file `server/server.tf`, with the following contents:
 
@@ -52,7 +52,7 @@ output "public_dns" {
 }
 ```
 
-### Step 5.1.3
+### Step 6.1.3
 
 In your root configuration (also called your root module) `/workspace/terraform/main.tf`, we can remove the previous references to your configuration and refactor them as a module.
 
@@ -87,7 +87,7 @@ output "public_dns" {
 }
 ```
 
-### Step 5.1.4
+### Step 6.1.4
 
 Now run `terraform get` or `terraform init` to install the module. Since we're
 just adding a module and no providers, `get` is sufficient, but `init` is safe
@@ -116,7 +116,7 @@ terraform apply
 
 ## Task 2: Explore the Public Module Registry
 
-### Step 5.2.1
+### Step 6.2.1
 
 HashiCorp hosts a public module registry at: https://registry.terraform.io/
 
@@ -124,13 +124,13 @@ The registry contains a large set of community-contributed modules that you can
 use in your own configurations. Explore the registry to see what is available to
 you.
 
-### Step 5.2.2
+### Step 6.2.2
 
 Search for "dynamic-keys" in the public registry and uncheck the "Verified" checkbox. You should then see a module called "dynamic-keys" created by one of HashiCorp's founders, Mitchell Hashimoto. Alternatively, you can navigate directly to https://registry.terraform.io/modules/mitchellh/dynamic-keys/aws/2.0.0.
 
 Select this module and read the content on the Readme, Inputs, Outputs, and Resources tabs. This module will generate a public and private key pair so you can SSH into your instance.
 
-### Step 5.2.3
+### Step 6.2.3
 
 To integrate this module into your configuration, add this after your provider
 block in `main.tf`:
@@ -153,7 +153,7 @@ To provision the resources defined by the module, run `terraform apply`, and
 answer `yes` to the confirmation prompt.
 
 
-### Step 5.2.4
+### Step 6.2.4
 
 Now we'll use the _keypair_ module to install a public key on our server. In `main.tf`, add the necessary output from our key module to our server module:
 
@@ -170,7 +170,7 @@ module "server" {
 }
 ```
 
-### Step 5.2.5
+### Step 6.2.5
 
 In your `server/server.tf` file, add two new variables to the rest of the variables at the top of the file:
 
@@ -203,7 +203,7 @@ Modules can be a bit daunting at first.  We are suddenly working with a number o
 
 ## Task 3: Refresh and rerun your Terraform configuration
 
-### Step 5.3.1
+### Step 6.3.1
 
 Rerun `terraform apply` to delete the original instance and recreate it once
 again. Now the public key will be installed on the new instance.

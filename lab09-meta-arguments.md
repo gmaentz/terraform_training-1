@@ -10,7 +10,7 @@ So far, we've already used arguments to configure your resources. These argument
 
 ## Task 1: Change the number of AWS instances with `count`
 
-### Step 8.1.1
+### Step 9.1.1
 
 Add a count argument to the AWS instance in `server/server.tf` with a value of 2:
 
@@ -26,7 +26,7 @@ resource "aws_instance" "web" {
 
 ## Task 2: Modify the rest of the configuration to support multiple instances
 
-### Step 8.2.1
+### Step 9.2.1
 
 If you run `terraform apply` now, you'll get an error. Since we added _count_ to the aws_instance.web resource, it now refers to multiple resources. Because of this, values like `aws_instance.web.public_ip` no longer refer to the public_ip of a single resource. We need to tell terraform which resource we're referring to.
 
@@ -44,13 +44,13 @@ output "public_dns" {
 
 The syntax `aws_instance.web.*` refers to all of the instances, so this will output a list of all of the public IPs and public DNS records. 
 
-### Step 8.2.2
+### Step 9.2.2
 
 Run `terraform apply` to add the new instance. You should see two IP addresses and two DNS addresses in the outputs.
 
 ## Task 3: Add variable interpolation to the Name tag to count the new instances
 
-### Step 8.3.1
+### Step 9.3.1
 
 Interpolate the count variable by changing the Name tag to include the current
 count over the total count. Update `server/server.tf` to add a new variable
@@ -86,7 +86,7 @@ resource. Next, we replace the value of the count parameter with the variable
 interpolation. Finally, we interpolate the current count (+ 1 because it's
 zero-indexed) and the variable itself.
 
-### Step 8.3.2
+### Step 9.3.2
 
 Run `terraform apply` in the terraform directory. You should see the revised tags that count the instances in the apply log.
 

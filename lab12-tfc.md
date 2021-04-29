@@ -8,13 +8,13 @@ Duration: 10 minutes
 
 ## Task 1: Sign up for Terraform Cloud
 
-### Step 10.1.1
+### Step 12.1.1
 
 Navigate to [the sign up page](https://app.terraform.io/signup?utm_source=banner&utm_campaign=intro_tf_cloud_remote) and create an account for Terraform Cloud.
 
 Create an Organization. This can be any name you would like.
 
-### Step 10.1.2
+### Step 12.1.2
 
 Terraform's CLI needs credentials before it can access Terraform Cloud. Follow these steps to allow Terraform to access your organization.
 
@@ -40,7 +40,7 @@ At this point, Terraform can use Terraform Cloud with any Terraform configuratio
 
 ## Task 2: Update your remote backend in the your Terraform config
 
-### Step 10.2.1
+### Step 12.2.1
 
 Navigate to `main.tf` where we created our resources for this training. Add the following to the beginning of the file:
 
@@ -61,7 +61,7 @@ Replace the organization with the name you chose in the previous step.
 
 The workspace name is arbitrary, since Terraform Cloud creates workspaces on demand; if a workspace with this name doesn't yet exist, it will be automatically created the next time you run terraform init for that configuration.
 
-### Step 10.2.2
+### Step 12.2.2
 
 Run `terraform init`.
 
@@ -99,7 +99,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-### Step 10.2.3
+### Step 12.2.3
 
 Create a new tag and run `terraform apply` and go to the Workspace you created. You should see state information there.
 

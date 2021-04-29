@@ -14,7 +14,7 @@ For this lab, we'll assume that you've installed [Terraform](https://www.terrafo
 
 Now that we have our state stored in Terraform Cloud in our `workspace` workspace, we will create another project, configuration, and workspace to read from it.
 
-### Step 1.3.1
+### Step 13.1.1
 
 Start by creating a new directory called `read-state` with a `main.tf` file:
 
@@ -26,7 +26,7 @@ mkdir -p /workstation/terraform/read_state && cd $_
 touch main.tf
 ```
 
-### Step 1.3.2
+### Step 13.1.2
 
 Place the following into your `main.tf`
 
@@ -40,7 +40,7 @@ resource "random_id" "random" {
 }
 ```
 
-### Step 1.3.3
+### Step 13.1.3
 
 In order to read from our workspace in Terraform Enterprise, we will need to setup a `terraform_remote_state` data source. Data sources are used to retrieve read-only data from sources outside of our project. It supports several cloud providers, but we'll be using `remote` as the `backend`.
 
@@ -60,7 +60,7 @@ data "terraform_remote_state" "write_state" {
 }
 ```
 
-### Step 1.3.4
+### Step 13.1.4
 
 Now that we have access to our remote `server-build` workspace, we can retrieve the `public_ip` output contained within it. We'll also output `random` which we created in this configuration, confirming that they are distinct.
 
@@ -75,7 +75,7 @@ output "remote_state_server_public_ip" {
 }
 ```
 
-### Step 1.3.5
+### Step 13.1.5
 
 To verify that we have successfully retrieved the state from out `server-build` workspace, we can run our configuration and validate our outputs.
 

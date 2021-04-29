@@ -11,7 +11,7 @@ infrastructure managed by this configuration.
 
 ## Task 1: Destroy your infrastructure
 
-### Step 10.1.1
+### Step 11.1.1
 
 Run the command `terraform destroy`:
 

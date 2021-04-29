@@ -9,7 +9,7 @@ Duration: 10 minutes
 
 ## Task 1: Add an aws_ami data source
 
-### Step 9.1.1
+### Step 10.1.1
 
 Add an aws_ami data source called "ubuntu_16_04" in server/server.tf after the
 variable definitions. It will find the most recent instance of a Ubuntu 16.04
@@ -30,7 +30,7 @@ data "aws_ami" "ubuntu_16_04" {
 
 ## Task 2: Make the aws_instance use the returned AMI
 
-### Step 9.2.1
+### Step 10.2.1
 
 Edit the aws_instance in server/server.tf so that its ami argument uses the AMI returned by the data source.
 
@@ -43,14 +43,14 @@ resource "aws_instance" "web" {
 }
 ```
 
-### Step 9.2.2
+### Step 10.2.2
 
 Additionally, since we no longer need the ami variable, remove it or comment it
 out (with initial "#") both in server/server.tf and in main.tf. In the latter,
 remove or comment it out both in the variable declaration itself and in the
 server module block. You can also comment it out in terraform.tfvars.
 
-### Step 9.2.3
+### Step 10.2.3
 
 Run `terraform apply` one last time to apply the changes you made.
 
