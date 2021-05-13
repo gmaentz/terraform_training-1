@@ -16,7 +16,7 @@ Now that we have our state stored in Terraform Cloud in our `workspace` workspac
 
 ### Step 13.1.1
 
-Start by creating a new directory called `read-state` with a `main.tf` file:
+Start by creating a new directory called `read_state` with a `main.tf` file:
 
 ```shell
 mkdir -p /workstation/terraform/read_state && cd $_
@@ -28,9 +28,10 @@ touch main.tf
 
 ### Step 13.1.2
 
-Place the following into your `main.tf`
+Place the following into your new `main.tf`
 
 ```hcl
+# read_state/main.tf
 resource "random_id" "random" {
   keepers = {
     uuid = uuid()
