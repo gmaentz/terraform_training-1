@@ -48,5 +48,5 @@ terraform output public_dns
 ### Step 2.2.3 Wrap an output query to ping the DNS record
 
 ```shell
-ping $(terraform output public_dns)
+ping $(terraform output -raw public_dns)
 ```
