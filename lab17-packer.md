@@ -68,11 +68,11 @@ Once the file is ready we will need to dothe following steps...
 Validate your configuration.
 
 ```shell
-> packer validate web-vistors.json
+> packer validate web-vistors.hcl
 ```
 
 ```shell
-> packer build web-vistors.json
+> packer build web-vistors.hcl
 ```
 
 ##### Resources
