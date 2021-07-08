@@ -16,17 +16,18 @@ Create a new json file called `web-vistors.json` with the following builder.
 ```json
 {
   "variables": {
-    "aws_source_ami": "ami-039a49e70ea773ffc"
+    "aws_source_ami": "ami-0dd76f917833aac4b"
   },
   "builders": [
     {
       "type": "amazon-ebs",
       "region": "us-east-1",
       "source_ami": "{{user `aws_source_ami`}}",
-      "instance_type": "t1.micro",
+      "instance_type": "t3.small",
       "ssh_username": "ubuntu",
       "ssh_pty": "true",
       "ami_name": "tmp-{{timestamp}}",
+      "subnet_id": "subnet-07fd2d3a304d98514",
       "tags": {
         "Created-by": "Packer",
         "OS_Version": "Ubuntu",
