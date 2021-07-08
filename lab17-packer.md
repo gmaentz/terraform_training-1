@@ -11,7 +11,7 @@ To build an image packer utilizes a JSON file with the following sections...
 * You can have multiple builder types in one file.
 
 Below is an example of a basic builder for AWS EBS AMI.
-Create a new json file called `web-vistors.json` with the following builder.
+Create a new json file called `web-vistors.hcl` with the following builder.
 
 ```hcl
 variable "aws_source_ami" {
