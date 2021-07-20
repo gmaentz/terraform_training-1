@@ -69,10 +69,6 @@ Provision these resources.
 terraform init
 ```
 
-```shell
-terraform apply -auto-approve
-```
-
 Update outputs.tf file
 ```hcl
 output "security_group_name" {
@@ -98,6 +94,10 @@ variable region {
   default     = "us-east-1"
   description = "AWS Account Region"
 }
+```
+
+```shell
+terraform apply -auto-approve
 ```
 
 The commands should succeed without error.
